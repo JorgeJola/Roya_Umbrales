@@ -10,13 +10,9 @@ app = FastAPI()
 app.title = "Sistema de alerta de riesgos (Hemileia Vastatrix) por umbrales tomados de literatura. By: Jorge Andrés Jola Hernández"
 app.version = "1.0.0"
 
-@app.on_event("startup")
-async def startup_event():
-    global Cantidad_Nitrogeno
-    Cantidad_Nitrogeno=float(input('Ingrese cantidad de Nitrogeno:'))
-
 
 @app.get('/Nitrogeno/{cantidad}')
-def Nitrogeno():
+def Nitrogeno(cantidad:float):
+    Cantidad_Nitrogeno=cantidad
     return Cantidad_Nitrogeno
 
