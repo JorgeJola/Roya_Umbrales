@@ -13,11 +13,10 @@ app.version = "1.0.0"
 @app.on_event("startup")
 async def startup_event():
     global Cantidad_Nitrogeno
-    Cantidad_Nitrogeno=0
+    Cantidad_Nitrogeno=float(input('Ingrese cantidad de Nitrogeno:'))
 
 
 @app.get('/Nitrogeno/{cantidad}')
 def Nitrogeno():
-    Cantidad_Nitrogeno=input('Ingrese cantidad de nitrogeno')
     return Cantidad_Nitrogeno
 
