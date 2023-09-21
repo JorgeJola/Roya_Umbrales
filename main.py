@@ -17,11 +17,7 @@ async def startup_event():
 
 
 @app.get('/Nitrogeno/{cantidad}')
-def Nitrogeno(cantidad:float):
-    Cantidad_Nitrogeno=cantidad
+def Nitrogeno():
+    Cantidad_Nitrogeno=input('Ingrese cantidad de nitrogeno')
     return Cantidad_Nitrogeno
-
-@app.get('/imprimir/{}')
-def imprimir():   
-    print(Cantidad_Nitrogeno)
 
